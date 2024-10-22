@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.character-list {
+  width: 20%;
+  max-height: 100vh;
+}
+
+
