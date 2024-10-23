@@ -1,7 +1,7 @@
 .hero-list {
   list-style-type: none;
-  padding: 0;
 }
+
 
 .hero-list li {
   padding: 10px;
@@ -30,4 +30,17 @@
 
 .load-more:hover {
   background-color: #0056b3;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px;
+  gap: 20px;
+}
+
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }

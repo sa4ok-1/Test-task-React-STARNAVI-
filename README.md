@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+## Star Wars Heroes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application that displays a list of Star Wars heroes along with detailed information about their associated films and vehicles. The application uses ReactJS for the frontend and React Flow for visualizing information in the form of a graph.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Paginated Heroes List: Browse through a list of Star Wars heroes with pagination.
 
-## Expanding the ESLint configuration
+- Hero Details: Click on a hero to view detailed information.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Film and Vehicle Visualization: Visualize films associated with the hero, and on clicking a film node, view the vehicles used in that film.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- ReactJS: Frontend framework for building the user interface.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- React Flow: For visualizing relationships between heroes, films, and vehicles.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Axios: For making API calls.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- TypeScript: Enhances JavaScript with type safety.
+
+- Jest & ViTest: For testing.
+
+## Getting Started
+
+## Prerequisites
+
+Node.js and npm installed on your machine.
+
+Installation
+
+## Clone the repository:
+
+git clone https://github.com/sa4ok-1/Test-task-React-STARNAVI-.git
+
+## Navigate to the project directory:
+
+cd star-wars-app
+
+## Install dependencies:
+
+npm install
+
+## Running the Application
+
+npm start
+
+## Running Tests
+
+npm run test
