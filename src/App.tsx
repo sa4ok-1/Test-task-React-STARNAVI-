@@ -1,4 +1,3 @@
-// src/App.tsx
 import React, { useState } from 'react';
 import HeroList from './components/HeroList';
 import HeroDetails from './components/HeroGraph';

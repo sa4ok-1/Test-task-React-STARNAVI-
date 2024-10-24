@@ -1,17 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useEffect } from 'react';
-import { fetchHeroes } from '../services/api';
-import './style/HeroList.css';
+import React, { useState, useEffect } from "react";
+import { fetchHeroes } from "../services/api";
+import "./style/HeroList.css";
 
-const HeroList: React.FC<{ onSelect: (id: number) => void }> = ({ onSelect }) => {
+const HeroList: React.FC<{ onSelect: (id: number) => void }> = ({
+  onSelect,
+}) => {
   const [heroes, setHeroes] = useState<any[]>([]);
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1); // Додаємо стан для кількості сторінок
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    fetchHeroes(page).then(data => {
+    fetchHeroes(page).then((data) => {
       setHeroes(data.results);
-      setTotalPages(data.totalPages); // Припустимо, що API повертає загальну кількість сторінок
+      setTotalPages(data.totalPages);
     });
   }, [page]);
 
@@ -20,17 +22,17 @@ const HeroList: React.FC<{ onSelect: (id: number) => void }> = ({ onSelect }) =>
   };
 
   return (
-    <><div className='container'>
-      <ul className="hero-list">
-        {heroes.map(hero => (
-          <li key={hero.id} onClick={() => onSelect(hero.id)}>
-            {hero.name}
-          </li>
-        ))}
-      </ul>
-
-      {/* Пагінація */}
-    </div><div className="pagination">
+    <>
+      <div className="container">
+        <ul className="hero-list">
+          {heroes.map((hero) => (
+            <li key={hero.id} onClick={() => onSelect(hero.id)}>
+              {hero.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="pagination">
         <button
           className="pagination-btn"
           disabled={page === 1}
@@ -46,7 +48,8 @@ const HeroList: React.FC<{ onSelect: (id: number) => void }> = ({ onSelect }) =>
         >
           →
         </button>
-      </div></>
+      </div>
+    </>
   );
 };
 

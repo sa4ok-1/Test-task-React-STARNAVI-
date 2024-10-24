@@ -31,11 +31,9 @@ describe('HeroDetails', () => {
     it('renders hero node and film nodes', async () => {
         render(<HeroDetails id={1} />);
 
-        // Check for hero node
         const heroNode = await screen.findByText('Luke Skywalker');
         expect(heroNode).toBeInTheDocument();
 
-        // Check for film nodes
         const filmNodes = await screen.findAllByText(/Film/);
         expect(filmNodes).toHaveLength(heroDetailsMock.films.length);
     });
@@ -47,7 +45,6 @@ describe('HeroDetails', () => {
         const filmNode = await screen.findByText('A New Hope');
         fireEvent.click(filmNode);
 
-        // Check for vehicle nodes
         const vehicleNode = await screen.findByText('Sand Crawler');
         expect(vehicleNode).toBeInTheDocument();
     });

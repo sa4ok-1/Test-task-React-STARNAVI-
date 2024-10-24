@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import HeroList from '../components/HeroList';
 import { fetchHeroes } from '../services/api';
-import { vi, describe, it, beforeEach, expect } from 'vitest';  // Make sure expect is imported from vitest
+import { vi, describe, it, beforeEach, expect } from 'vitest';
 
 vi.mock('../services/api');
 
@@ -15,13 +15,14 @@ const heroesMock = {
   totalPages: 2,
 };
 
+
 describe('HeroList', () => {
   beforeEach(() => {
-    (fetchHeroes as any).mockResolvedValue(heroesMock);  // Use 'any' to bypass TypeScript errors
+    (fetchHeroes as any).mockResolvedValue(heroesMock);
   });
 
   it('renders hero list', async () => {
-    render(<HeroList onSelect={() => {}} />);
+    render(<HeroList onSelect={() => { }} />);
     const heroItems = await screen.findAllByRole('listitem');
     expect(heroItems).toHaveLength(heroesMock.results.length);
   });
@@ -31,14 +32,14 @@ describe('HeroList', () => {
     render(<HeroList onSelect={onSelect} />);
     const heroItems = await screen.findAllByRole('listitem');
     fireEvent.click(heroItems[0]);
-    expect(onSelect).toHaveBeenCalledWith(1);  // Hero ID from mock data
+    expect(onSelect).toHaveBeenCalledWith(1);
   });
 
   it('handles pagination', async () => {
-    render(<HeroList onSelect={() => {}} />);
+    render(<HeroList onSelect={() => { }} />);
     const nextButton = screen.getByText('→');
     expect(nextButton).not.toBeDisabled();
     fireEvent.click(nextButton);
-    expect(fetchHeroes).toHaveBeenCalledWith(2);  // New page number
+    expect(fetchHeroes).toHaveBeenCalledWith(2); 
   });
 });

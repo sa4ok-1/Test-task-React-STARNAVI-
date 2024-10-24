@@ -2,6 +2,9 @@
 
 This project is a web application that displays a list of Star Wars heroes along with detailed information about their associated films and vehicles. The application uses ReactJS for the frontend and React Flow for visualizing information in the form of a graph.
 
+## Preview
+https://test-task-react-starnavi.vercel.app/
+
 ## Features
 
 - Paginated Heroes List: Browse through a list of Star Wars heroes with pagination.
